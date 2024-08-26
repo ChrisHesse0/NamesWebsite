@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Baby Name Popularity</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'babynames/styles.css' %}">
+    <script>
+        function searchNames() {
+            const name = document.getElementById('name').value;
+            const year_start = document.getElementById('year_start').value;
+            const year_end = document.getElementById('year_end').value;
+            const sex = document.getElementById('sex').value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `/names/search_results/?name=${name}&year_start=${year_start}&year_end=${year_end}&sex=${sex}`, true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById('results').innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send();
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Search Baby Name Popularity</h1>
+
+    <!-- Form for searching a name, year range, and sex -->
+    <div class="search-form-container">
+        <form id="filterForm" onsubmit="return false;">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{ query_name }}" required>
+
+            <label for="year_start">Year Start:</label>
+            <select name="year_start" id="year_start" required>
+                {% for year in years %}
+                    <option value="{{ year }}" {% if year|stringformat:"s" == query_year_start|stringformat:"s" %}selected{% endif %}>{{ year }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year_end">Year End:</label>
+            <select name="year_end" id="year_end" required>
+                {% for year in years %}
+                    <option value="{{ year }}" {% if year|stringformat:"s" == query_year_end|stringformat:"s" %}selected{% endif %}>{{ year }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="sex">Sex:</label>
+            <select name="sex" id="sex" required>
+                <option value="M" {% if query_sex == "M" %}selected{% endif %}>Male</option>
+                <option value="F" {% if query_sex == "F" %}selected{% endif %}>Female</option>
+            </select>
+
+            <button type="button" onclick="searchNames()">Search</button>
+        </form>
+    </div>
+
+    <!-- Display the search results -->
+    <div id="results">
+        {% include 'babynames/search_results.html' %}
+    </div>
+</body>
+</html>

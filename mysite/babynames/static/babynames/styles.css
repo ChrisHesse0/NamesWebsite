@@ -1,0 +1,142 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+/* Common form styles */
+form {
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.index-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    gap: 20px
+}
+
+/* Centering and specific styles for the index page form */
+.index-form-container {
+    flex: 1;
+    max-width: 75%;
+    margin: 20px auto; /* Centers the form on the page */
+    text-align: center; /* Centers the form's content */
+}
+
+/* Separate bubble for search redirection on the index page */
+.search-container {
+    flex: 1;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 20%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.center-content {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column; /* Stacks items vertically */
+    height: 100%; /* Ensures the content takes up the full height of the parent */
+}
+
+
+
+/* Centering and specific styles for the search page form */
+.search-form-container {
+    max-width: 600px;
+    margin: 20px auto; /* Centers the form on the page */
+    text-align: center; /* Centers the form's content */
+}
+
+/* Styles for the results section */
+#results {
+    margin: 20px auto;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #4CAF50;
+}
+
+
+
+.search-container label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.search-container button {
+    width: auto;
+    padding: 10px 20px;
+}
+
+/* Adjusting for smaller screens */
+@media (max-width: 768px) {
+    .index-form-container, .search-form-container {
+        max-width: 100%;
+    }
+}

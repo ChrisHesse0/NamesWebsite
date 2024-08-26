@@ -1,0 +1,10 @@
+{% if names %}
+    <h2>Top Names for {{ selected_year }} ({{ sex_label }})</h2>
+    <ul>
+        {% for name in names %}
+            <li>{{ name.year_rank }}. {{ name.name }} - {{ name.count }} babies</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No names found for the selected criteria.</p>
+{% endif %}

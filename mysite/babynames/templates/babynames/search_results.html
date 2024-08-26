@@ -1,0 +1,12 @@
+{% if search_performed %}
+    {% if results %}
+        <h2>Search Results for "{{ query_name }}" from {{ query_year_start }} to {{ query_year_end }} ({{ sex_label }})</h2>
+        <ul>
+            {% for result in results %}
+                <li>{{ result.year }}: {{ result.name }} was ranked {{ result.year_rank }} with {{ result.count }} babies named {{ result.name }}.</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found for "{{ query_name }}" in the selected range.</p>
+    {% endif %}
+{% endif %}

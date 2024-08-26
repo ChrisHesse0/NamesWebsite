@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Baby Names</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'babynames/styles.css' %}">
+    <script>
+        function updateNames() {
+            const year = document.getElementById('year').value;
+            const sex = document.getElementById('sex').value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `/names/get_names/?year=${year}&sex=${sex}`, true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('results').innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send();
+        }
+
+        function redirectToSearch() {
+            window.location.href = "/names/search";
+        }
+    </script>
+</head>
+<body>
+    <h1>Baby Name Popularity by Each Year</h1>
+
+    <div class="index-container">
+        <!-- Container for the year/sex form -->
+        <div class="index-form-container">
+            <form id="filterForm" onsubmit="return false;">
+                <label for="year">Year:</label>
+                <select name="year" id="year" required onchange="updateNames()">
+                    {% for y in years %}
+                        <option value="{{ y }}" {% if y == selected_year %}selected{% endif %}>{{ y }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="sex">Sex:</label>
+                <select name="sex" id="sex" required onchange="updateNames()">
+                    <option value="M" {% if selected_sex == "M" %}selected{% endif %}>Male</option>
+                    <option value="F" {% if selected_sex == "F" %}selected{% endif %}>Female</option>
+                </select>
+            </form>
+        </div>
+
+        <!-- Separate bubble for search redirection -->
+        <div class="search-container">
+            <div class="center-content">
+                <label>Or search with a specific name instead:</label>
+                <button type="button" onclick="redirectToSearch()">Search Here</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Display the results -->
+    <div id="results">
+        {% include 'babynames/results.html' %}
+    </div>
+</body>
+</html>
