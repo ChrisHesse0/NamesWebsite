@@ -12,7 +12,7 @@
             const sex = document.getElementById('sex').value;
 
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', `/names/get_names/?year=${year}&sex=${sex}`, true);
+            xhr.open('GET', `/get_names/?year=${year}&sex=${sex}`, true);
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
             xhr.onload = function () {
@@ -25,7 +25,7 @@
         }
 
         function redirectToSearch() {
-            window.location.href = "/names/search";
+            window.location.href = "/search";
         }
     </script>
 </head>
