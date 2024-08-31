@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'landing/styles.css' %}">
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <p>If you have any questions, suggestions, or feedback, feel free to reach out to us via email. We’re here to help and improve your experience on our site.</p>
+
+    <h2>Contact Information</h2>
+    <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+
+    <div class="back-button-container">
+        <a href="{% url 'names:index' %}" class="back-button">Back to Main Page</a>
+    </div>
+</body>
+</html>

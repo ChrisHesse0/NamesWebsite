@@ -10,3 +10,6 @@ def privacy(request):
 
 def terms(request):
     return render(request, 'landing/terms.html')
+
+def contact(request):
+    return render(request, 'landing/contact.html')
