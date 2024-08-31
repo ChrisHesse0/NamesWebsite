@@ -8,3 +8,5 @@ def about(request):
 def privacy(request):
     return render(request, 'landing/privacy.html')
 
+def terms(request):
+    return render(request, 'landing/terms.html')
