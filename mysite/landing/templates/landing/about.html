@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'landing/styles.css' %}">
+</head>
+<body>
+    <h1>About Us</h1>
+
+    <div class="description-container">
+        <p>Welcome to our Baby Names website! Our mission is to provide you with accurate and up-to-date information on baby name popularity across different years and genders. We believe that names hold a special significance, and we want to help you find the perfect name for your child.</p>
+        <p>Our data is sourced directly from the US Social Security database, ensuring that the information you receive is both reliable and comprehensive. Whether you are looking for the most popular names of the year or want to see how a name has trended over time, our website is here to assist you.</p>
+        <p>If you have any questions, suggestions, or feedback, please do not hesitate to reach out to us. We are always here to help and improve your experience on our site.</p>
+    </div>
+
+    <!-- Optional: Add a link to navigate back to the main page -->
+    <div class="back-button-container">
+        <a href="{% url 'names:index' %}" class="back-button">Back to Main Page</a>
+    </div>
+</body>
+</html>
