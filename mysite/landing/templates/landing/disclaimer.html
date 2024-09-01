@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'landing/styles.css' %}">
+</head>
+<body>
+    <h1>Disclaimer</h1>
+
+    <h2>General Information Disclaimer</h2>
+    <p>The information provided on [Your Website Name] ("we," "our," "us") is for general informational purposes only. While we strive to keep the information up-to-date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+
+    <h2>No Professional Advice</h2>
+    <p>The content on this site does not constitute professional advice (legal, financial, medical, etc.). It is provided for general informational and educational purposes only and should not be relied upon as professional advice. Before taking any action based on such information, we encourage you to consult with the appropriate professionals. Your use of or reliance on any information on this site is solely at your own risk.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website. We will not be liable for any errors or omissions in this information nor for the availability of this information. Every effort is made to keep the website up and running smoothly. However, [Your Website Name] takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+
+    <h2>External Links Disclaimer</h2>
+    <p>Through this website, you may be able to link to other websites that are not under the control of [Your Website Name]. We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them. We are not responsible for the content, accuracy, or opinions expressed in such websites, and such websites are not investigated, monitored, or checked for accuracy or completeness by us.</p>
+
+    <h2>Affiliate Disclaimer</h2>
+    <p>[Your Website Name] may participate in affiliate marketing programs, which means we may get paid commissions on purchases made through our links to retailer sites. This does not affect the price you pay for products or services, and we only recommend products or services we believe will be of value to our readers. We are not responsible for the quality, accuracy, timeliness, or any other aspect of the services or products that may be provided by third parties linked to this website.</p>
+
+    <div class="back-button-container">
+        <a href="{% url 'names:index' %}" class="back-button">Back to Main Page</a>
+    </div>
+
+</body>
+</html>

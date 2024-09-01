@@ -13,3 +13,6 @@ def terms(request):
 
 def contact(request):
     return render(request, 'landing/contact.html')
+
+def disclaimer(request):
+    return render(request, 'landing/disclaimer.html')
