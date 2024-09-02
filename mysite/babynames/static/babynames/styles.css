@@ -172,6 +172,8 @@ li {
 .footer-links li {
     display: inline;
     margin: 0 15px;
+    border-left: none;
+
 }
 
 .footer-links a {
